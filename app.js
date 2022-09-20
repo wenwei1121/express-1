@@ -1,6 +1,8 @@
 const bodyParser = require("body-parser")
 const routerMember = require("./routes/members")
+const routerFavorite = require("./routes/favorites")
 const express = require("express")
+const { useFavorites } = require("./controllers/favorites")
 const app = express()
 
 app.use((req, res, next) => {
@@ -15,6 +17,7 @@ app.use(bodyParser.json())
 
 // 改用引入 router, 要用 use(basePath, router.js)
 app.use("/pipi", routerMember)
+app.use("/pipi", routerFavorite)
 
 app.listen(3030, () => {
     console.log("Listening 3030 in express");
