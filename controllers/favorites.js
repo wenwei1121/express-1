@@ -8,17 +8,17 @@ exports.useFavorites = async (req, res) => {
         return
     }
 
-    if (moduleName === "addFavorites") {
+    if (moduleName === "addFavorite") {
         await addFavorite(parameter)
         res.json({
             statusCode: 200,
             status: "ok",
-            message: "Add new member success!",
+            message: "Add new favorite success!",
         })
         return
     }
 
-    if (moduleName === "deleteFavorites") {
+    if (moduleName === "deleteFavorite") {
         await deleteFavorite(parameter.id)
         res.json({
             statusCode: 200,
